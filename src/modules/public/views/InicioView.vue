@@ -1,16 +1,23 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import axios from 'axios';
+import { getProductos } from '@/services/productoService'
+import TarjetaProducto from '@/modules/public/components/TarjetaProducto.vue'
+
+
 
 
 const listadoProductos = ref([]);
 
 
-const getProductos  = async () =>{
+const listarProductos = async () => {
 
-    const respuesta =  await axios.get('https://shop.preparateaqui.com/api/v1/productos?page=1&limit=10')
 
-    console.log(respuesta.data);
+    const resultado = await getProductos({ limit: 3 });
+
+    listadoProductos.value = resultado.data;
+
+    console.log('listando productos...', listadoProductos.value);
+
 }
 
 
@@ -21,9 +28,9 @@ const getProductos  = async () =>{
 
 onMounted(() => {
 
-    getProductos();
+    listarProductos();
 
-    
+
     // get the element to animate
     var element = document.getElementById('count-stats');
     var elementHeight = element.clientHeight;
@@ -114,29 +121,7 @@ onMounted(() => {
                 <h2 class="text-center mb-4">Productos destacados</h2>
                 <div class="row align-items-center">
 
-
-                    <div class="col-lg-4  mt-lg-0 mt-4">
-                        <div class="card">
-                            <div class="card-header p-0 position-relative mt-2 mx-2 z-index-2">
-                                <a class="d-block blur-shadow-image">
-                                    <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                                        alt="img-colored-shadow" class="img-fluid border-radius-lg">
-                                </a>
-                            </div>
-                            <div class="card-body text-center">
-                                <h5 class="font-weight-normal">
-                                    <a href="javascript:;">Get insights on Search</a>
-                                </h5>
-                                <p class="mb-0">
-                                    Website visitors today demand a frictionless user expericence — especially when
-                                    using search. Because of the hight standards.
-                                </p>
-                                <button type="button" class="btn bg-gradient-info btn-sm mb-0 mt-3">Find out
-                                    more</button>
-                            </div>
-                        </div>
-                    </div>
-
+                    <TarjetaProducto v-for="producto in listadoProductos" :key="producto.id" :producto="producto"  />
 
                 </div>
             </div>

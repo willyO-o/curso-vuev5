@@ -10,11 +10,12 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mx-auto my-auto">
-                        <h1 class="text-white">Work with an amazing design</h1>
-                        <p class="lead mb-4 text-white opacity-8">We’re constantly trying to express ourselves and
-                            actualize our dreams. If you have the opportunity to play this game</p>
-                        <button type="submit" class="btn bg-white text-dark">Create Account</button>
-                        <h6 class="text-white mb-2 mt-5">Find us on</h6>
+                        <h1 class="text-white">Bienvenido a Mi Tienda</h1>
+                        <p class="lead mb-4 text-white opacity-8">
+                            Descubre una amplia variedad de productos de alta calidad a precios increíbles. ¡Compra ahora y disfruta de una experiencia de compra única!
+                        </p>
+                        <RouterLink :to="{name: 'Tienda'}" class="btn bg-white text-dark">Comprar Ahora</RouterLink>
+                        <h6 class="text-white mb-2 mt-5">Siguenos en</h6>
                         <div class="d-flex justify-content-center">
                             <a href="javascript:;"><i class="fab fa-facebook text-lg text-white me-4"></i></a>
                             <a href="javascript:;"><i class="fab fa-instagram text-lg text-white me-4"></i></a>
