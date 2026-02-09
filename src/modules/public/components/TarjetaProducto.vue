@@ -32,7 +32,7 @@ const props =  defineProps({
             </div>
             <div class="card-body text-center">
                 <h5 class="font-weight-normal">
-                    <a href="javascript:;">{{ producto.titulo }}</a>
+                    <RouterLink :to="{name:'DetalleProducto', params: {id:producto.id}}">{{ producto.titulo }}</RouterLink>
                 </h5>
                 <h6>{{ producto.precio }} Bs.</h6>
                 <p class="mb-0">
