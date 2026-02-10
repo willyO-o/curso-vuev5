@@ -8,7 +8,7 @@ import useCarritoStore from '@/modules/public/stores/carritoStore'
 const carritoStore = useCarritoStore()
 
 
-const props =  defineProps({
+const props = defineProps({
     producto: {
         type: Object,
         required: true
@@ -32,16 +32,21 @@ const props =  defineProps({
             </div>
             <div class="card-body text-center">
                 <h5 class="font-weight-normal">
-                    <RouterLink :to="{name:'DetalleProducto', params: {id:producto.id}}">{{ producto.titulo }}</RouterLink>
+                    <RouterLink :to="{ name: 'DetalleProducto', params: { id: producto.id } }">{{ producto.titulo }}
+                    </RouterLink>
                 </h5>
                 <h6>{{ producto.precio }} Bs.</h6>
                 <p class="mb-0">
                     {{ truncarTexto(producto.descripcion) }}
                 </p>
-                <button 
-                    @click="carritoStore.agregarProducto(producto)"
-                type="button" class="btn bg-gradient-info btn-sm mb-0 mt-3">
+                <button v-if="carritoStore.getProductoId(producto.id).cantidad < producto.stock"
+                    @click="carritoStore.agregarProducto(producto)" type="button"
+                    class="btn bg-gradient-info btn-sm mb-0 mt-3">
                     Añadir al carrito
+                </button>
+
+                <button v-else disabled="true" class="btn bg-gradient-info btn-sm mb-0 mt-3">
+                    Sin stock
                 </button>
             </div>
         </div>
