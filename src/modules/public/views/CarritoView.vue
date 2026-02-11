@@ -20,7 +20,7 @@ const decrementar = (item) => {
 
 <template>
 
-    <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
+    <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6 mt-5">
 
         <section class="py-7">
             <div class="container">
