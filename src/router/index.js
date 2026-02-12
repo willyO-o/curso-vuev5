@@ -50,8 +50,38 @@ const router = createRouter({
       path: '/admin',
       component: () => import('@/modules/admin/views/AdminLayout.vue'),
       meta: { requiresAuth: true },
-
       children: [
+        {
+          path: '/',
+          name: 'Panel',
+          component: () => import('@/modules/admin/views/PanelView.vue')
+        },
+        {
+          path: 'productos',
+          name: 'Productos',
+          component: () => import('@/modules/admin/views/ProductosView.vue')
+        },
+        {
+          path: 'productos/crear',
+          name: 'CrearProducto',
+          component: () => import('@/modules/admin/views/ProductoFormView.vue')
+        },
+        {
+          path: 'productos/editar/:id',
+          name: 'EditarProducto',
+          component: () => import('@/modules/admin/views/ProductoFormView.vue')
+        },
+        {
+          path: 'categorias',
+          name: 'Categorias',
+          component: () => import('@/modules/admin/views/CategoriasView.vue')
+        },
+        {
+          path: 'usuarios',
+          name: 'Usuarios',
+          component: () => import('@/modules/admin/views/UsuariosView.vue')
+        },
+
 
       ],
     }
