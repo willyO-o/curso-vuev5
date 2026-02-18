@@ -1,6 +1,6 @@
 <script setup>
 
-import '@/assets/js/material-dashboard.js'
+// import '@/assets/js/material-dashboard.js'
 import Sidebar from '@/modules/admin/components/layouts/Sidebar.vue'
 import Cabecera from '@/modules/admin/components/layouts/Cabecera.vue'
 import Footer from '@/modules/admin/components/layouts/Footer.vue'

@@ -1,8 +1,12 @@
 <script setup>
 import { primeraImagen } from '@/helpers/textoHelper';
 import useCarritoStore from '@/modules/public/stores/carritoStore'
+import {ref} from 'vue'
 
 const carritoStore = useCarritoStore()
+
+
+const estaAutenticado = ref(localStorage.getItem('informacionUsuario') !== null)
 
 </script>
 
@@ -145,8 +149,12 @@ const carritoStore = useCarritoStore()
                                 </li>
 
                                 <li class="nav-item my-auto ms-3 ms-lg-0">
-                                    <RouterLink :to="{ name: 'Login' }"
+                                    <RouterLink v-if="estaAutenticado"
+                                        :to="{ name: 'Login' }"
                                         class="btn btn-sm  text-white bg-dark  mb-0 me-1 mt-2 mt-md-0">Login
+                                    </RouterLink>
+                                    <RouterLink v-else :to="{ name: 'Panel' }"
+                                        class="btn btn-sm  text-white bg-dark  mb-0 me-1 mt-2 mt-md-0">Administración
                                     </RouterLink>
                                 </li>
                             </ul>

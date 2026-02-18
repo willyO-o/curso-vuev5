@@ -41,7 +41,7 @@ const iniciarSesion = async () => {
 
         setTimeout(()=>{
 
-            router.push('/admin')
+            router.push({name: 'Panel'})
 
         },2000)
 
