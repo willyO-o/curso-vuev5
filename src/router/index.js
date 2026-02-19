@@ -50,6 +50,16 @@ const router = createRouter({
       path: '/admin',
       component: () => import('@/modules/admin/views/AdminLayout.vue'),
       meta: { requiresAuth: true },
+      beforeEnter: (to, from, next) => {
+        const refreshToken = localStorage.getItem('refreshToken')
+        const informacionUsuario = localStorage.getItem('informacionUsuario')
+        if (refreshToken && informacionUsuario) {
+          next()
+        } else {
+          next('/login')
+        }
+      },
+
       children: [
         {
           path: '/',

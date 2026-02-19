@@ -14,3 +14,15 @@ export const getUsuario = async () => {
     return respuesta.data
 
 }
+
+export const logout = async () =>{
+
+    const refreshToken = localStorage.getItem('refreshToken')
+
+    const respuesta = await axiosInstance.post('/auth/logout', {
+        refresh_token: refreshToken
+    })
+
+    return respuesta.data
+
+}

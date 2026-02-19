@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-free": "^7.1.0",
     "axios": "^1.13.4",
     "dotenv": "^17.2.4",
+    "groq-sdk": "^0.37.0",
     "pinia": "^3.0.4",
     "pinia-plugin-persistedstate": "^4.7.1",
     "sweetalert2": "^11.26.18",

@@ -6,6 +6,16 @@ import Cabecera from '@/modules/admin/components/layouts/Cabecera.vue'
 import Footer from '@/modules/admin/components/layouts/Footer.vue'
 import Configuracion from '@/modules/admin/components/layouts/Configuracion.vue'
 
+import { onMounted } from 'vue';
+
+
+onMounted(() => {
+
+    import('@/assets/js/material-dashboard.js')
+
+})
+
+
 </script>
 <template>
 

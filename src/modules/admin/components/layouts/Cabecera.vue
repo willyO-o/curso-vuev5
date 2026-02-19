@@ -1,4 +1,28 @@
 <script setup>
+
+import { logout } from '@/services/authService'
+import { useRouter } from 'vue-router'
+
+import Swal from 'sweetalert2'
+
+const router = useRouter()
+
+const cerrarSesion = async () => {
+
+    const resultado = await logout()
+
+    localStorage.removeItem('accessToken')
+    localStorage.removeItem('refreshToken')
+    localStorage.removeItem('informacionUsuario')
+
+    Swal.fire("Sesion Cerrada", "Hasta luego", "success")
+
+    setTimeout(() =>{
+        router.push({name: 'Login'})
+    }, 2000)
+}
+
+
 </script>
 
 <template>
@@ -21,9 +45,10 @@
                 </div>
                 <ul class="navbar-nav d-flex align-items-center  justify-content-end">
                     <li class="nav-item d-flex align-items-center">
-                        <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank"
-                            href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online
-                            Builder</a>
+                        <a @click="cerrarSesion" class="btn btn-outline-primary btn-sm mb-0 me-3" 
+                            href="javascript:;">
+                            Cerrar Sesion
+                        </a>
                     </li>
                     <li class="mt-1">
                         <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard"

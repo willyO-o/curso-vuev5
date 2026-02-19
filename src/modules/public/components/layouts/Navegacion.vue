@@ -6,7 +6,7 @@ import {ref} from 'vue'
 const carritoStore = useCarritoStore()
 
 
-const estaAutenticado = ref(localStorage.getItem('informacionUsuario') !== null)
+const estaAutenticado = ref(localStorage.getItem('informacionUsuario'))
 
 </script>
 
@@ -149,7 +149,7 @@ const estaAutenticado = ref(localStorage.getItem('informacionUsuario') !== null)
                                 </li>
 
                                 <li class="nav-item my-auto ms-3 ms-lg-0">
-                                    <RouterLink v-if="estaAutenticado"
+                                    <RouterLink v-if="!estaAutenticado"
                                         :to="{ name: 'Login' }"
                                         class="btn btn-sm  text-white bg-dark  mb-0 me-1 mt-2 mt-md-0">Login
                                     </RouterLink>
