@@ -248,7 +248,7 @@ onMounted(() => {
                         <img class="w-100 opacity-7" src="/assets/img/logos/gray-logos/logo-pinterest.svg" alt="logo">
                     </div>
                     <div class="col-lg-2 col-md-4 col-6 mb-4">
-                        <img class="w-100 opacity-7" src="/assets/img/logos/gray-logos/logo-spotify.svg" alt="logo">
+                        <!-- <img class="w-100 opacity-7" src="assets/img/logos/gray-logos/logo-spotify.svg" alt="logo"> -->
                     </div>
                     <div class="col-lg-2 col-md-4 col-6 mb-4">
                         <img class="w-100 opacity-7" src="/assets/img/logos/gray-logos/logo-vodafone.svg" alt="logo">

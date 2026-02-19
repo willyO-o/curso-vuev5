@@ -105,7 +105,7 @@ const estaAutenticado = ref(localStorage.getItem('informacionUsuario'))
                                         <div class="row d-lg-none">
                                             <div class="col-md-12 g-0">
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="../pages/about-us.html">
+                                                    href="/pages/about-us.html">
                                                     <h6
                                                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
                                                         Getting Started</h6>
@@ -113,14 +113,14 @@ const estaAutenticado = ref(localStorage.getItem('informacionUsuario'))
                                                         contents</span>
                                                 </a>
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="../pages/about-us.html">
+                                                    href="/pages/about-us.html">
                                                     <h6
                                                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
                                                         Foundation</h6>
                                                     <span class="text-sm">See our colors, icons and typography</span>
                                                 </a>
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="../pages/about-us.html">
+                                                    href="/pages/about-us.html">
                                                     <h6
                                                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
                                                         Components</h6>
@@ -128,14 +128,14 @@ const estaAutenticado = ref(localStorage.getItem('informacionUsuario'))
                                                         components</span>
                                                 </a>
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="../pages/about-us.html">
+                                                    href="/pages/about-us.html">
                                                     <h6
                                                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
                                                         Plugins</h6>
                                                     <span class="text-sm">Check how you can integrate our plugins</span>
                                                 </a>
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="../pages/about-us.html">
+                                                    href="/pages/about-us.html">
                                                     <h6
                                                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
                                                         Utility Classes</h6>
